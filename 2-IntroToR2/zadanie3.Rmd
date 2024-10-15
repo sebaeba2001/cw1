@@ -1,0 +1,52 @@
+---
+title: "zadanie3"
+author: "seba"
+date: "2024-10-15"
+output: html_document
+---
+
+## Zadanie 3: Tworzenie raportu w RMarkdown
+
+**Cel:** Nauka tworzenia prostego raportu w RMarkdown, integrującego tekst i podstawowe elementy.
+
+### Instrukcje i rozwiązanie:
+
+1.  **W RStudio stwórz nowy plik RMarkdown**.
+
+    -   **Krok 1:** Kliknij **File** -\> **New File** -\> **R Markdown...**.
+    -   **Krok 2:** Uzupełnij tytuł, autora i wybierz format **HTML**.
+
+2.  **Napisz prosty raport**, który zawiera następujące sekcje:
+
+    -   **Wprowadzenie:** Krótkie wprowadzenie na temat tego, co obejmuje raport. \# opis srodowiska, kod i wnioski
+
+    -   **Opis środowiska:** Opisz, jakie pakiety zostały zainstalowane i dlaczego
+
+        ## ggplot2 do robienia wykresow, gameR do ładnych kolorów
+
+    -   **Przykładowy kod:** Dodaj prosty fragment kodu R (np. wyświetlenie powitania).
+
+        ## print("hello world")
+
+        ## library(gameR)
+
+    -   **Wnioski:** Krótkie podsumowanie tego, czego się nauczyłeś/aś.
+
+        ## szukanie i dodawanie pakietów oraz sprawdzanie ich poprawnego zainstalowanie i funkcji, dodawanie kodów na GitHub
+
+3.  **Dodaj przykładowy kod** do raportu.
+
+    ``` r
+    ## Przykładowy kod R
+    ## print("hello world")
+    ## ??gameR
+    ## ?ggplot2
+    ```
+
+4.  **Sformatuj tekst** używając nagłówków, pogrubień i list punktowanych, aby raport był czytelny. Wskazówki dotyczące formatowania znajdziesz w pliku `markdown-cheatsheet.md` w repozytorium.
+
+5.  **Wygeneruj raport** w formacie HTML.
+
+    -   **Krok 1:** Kliknij **Knit** w pasku narzędzi RStudio.
+
+6.  **Zapisz plik** jako `zadanie3.Rmd` i prześlij go (oraz wygenerowany plik HTML) do swojego repozytorium.
