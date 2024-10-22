@@ -1,0 +1,169 @@
+---
+title: "zadanie3"
+author: "seba"
+date: "2024-10-15"
+output: html_document
+---
+
+## Zadanie 3: Tworzenie raportu w RMarkdown
+
+**Cel:** Nauka tworzenia prostego raportu w RMarkdown, integrującego tekst i podstawowe elementy.
+
+### Instrukcje i rozwiązanie:
+
+1.  **W RStudio stwórz nowy plik RMarkdown**.
+
+    -   **Krok 1:** Kliknij **File** -\> **New File** -\> **R Markdown...**.
+    -   **Krok 2:** Uzupełnij tytuł, autora i wybierz format **HTML**.
+
+2.  **Napisz prosty raport**, który zawiera następujące sekcje:
+
+    -   **Wprowadzenie:** Krótkie wprowadzenie na temat tego, co obejmuje raport. \# opis srodowiska, kod i wnioski
+
+    -   **Opis środowiska:** Opisz, jakie pakiety zostały zainstalowane i dlaczego
+
+        ## ggplot2 do robienia wykresow, gameR do ładnych kolorów
+
+    -   **Przykładowy kod:** Dodaj prosty fragment kodu R (np. wyświetlenie powitania).
+
+        ## print("hello world")
+
+        ## library(gameR)
+
+    -   **Wnioski:** Krótkie podsumowanie tego, czego się nauczyłeś/aś.
+
+        ## szukanie i dodawanie pakietów oraz sprawdzanie ich poprawnego zainstalowanie i funkcji, dodawanie kodów na GitHub
+
+3.  **Dodaj przykładowy kod** do raportu.
+
+    ``` r
+    ## Przykładowy kod R
+    ## print("hello world")
+    ## ??gameR
+    ## ?ggplot2
+    ```
+
+4.  **Sformatuj tekst** używając nagłówków, pogrubień i list punktowanych, aby raport był czytelny. Wskazówki dotyczące formatowania znajdziesz w pliku `markdown-cheatsheet.md` w repozytorium.
+
+5.  **Wygeneruj raport** w formacie HTML.
+
+    -   **Krok 1:** Kliknij **Knit** w pasku narzędzi RStudio.
+
+6.  **Zapisz plik** jako `zadanie3.Rmd` i prześlij go (oraz wygenerowany plik HTML) do swojego repozytorium.
+
+## **Część podstawowa**
+
+Zadanie 1.
+
+**Oblicz pole trójkąta o podstawie 10 i wysokości 5, używając operatora mnożenia.**
+
+Wzór na pole trójkąta: $a*h/2$
+
+```{r}
+pt <- 10*5/2
+paste("Wynik to", pt)
+```
+
+Zadanie 2.
+
+**Znajdź resztę z dzielenia 256 przez 7 oraz wynik dzielenia całkowitego.**
+
+```{r}
+paste("Reszta z dzielenia całkowitego 256 przez 7 to", 256%/%7,", a reszta wynosi", 256%%7)
+```
+
+## **Część statystyczna**
+
+Zadanie 1.
+
+**Dla wektora danych** $[2, 4, 6, 8, 10]$ oblicz średnią arytmetyczną, medianę oraz wariancję.
+
+```{r}
+dane <-c(3,5,6,8,10)
+Srednia_arytmetyczna <- mean(dane)
+Mediana <- median(dane)
+Wariancja <- var(dane)
+
+paste("Średnia wynosi",Srednia_arytmetyczna,
+      "Mediana wynosi",Mediana,
+      "Wariancja wynosi",Wariancja)
+```
+
+Zadanie 1.
+
+**Stwórz wektor z 50 losowych liczb z przedziału od 1 do 100. Znajdź wartość minimalną, maksymalną oraz sumę wszystkich elementów.**
+
+```{r}
+wektor1do100 <- c(1:100)
+losowe <- sample(wektor1do100, size = 50, replace = FALSE)
+min <- min(losowe)
+max <- max(losowe)
+suma <- sum(losowe)
+wyliczanie<-for(i in losowe){
+  print (i)
+} else {
+    print("?")
+}
+print(paste("Wektor zawiera liczby:", i )
+paste("Najmniejsza liczba w wektorze to",min)
+paste("Największe liczba w wektorze to",max)
+paste("Suma liczb w wektorze to",suma)
+
+```
+
+Zadanie 2.
+
+**Dla wektora** $[2, 4, 6, 8, 10]$ wybierz drugi i czwarty element.
+
+```{r}
+wektor3 <- seq(from=0, to=1, by=0.1)
+print(wektor3)
+```
+
+Część 4: Praca z ramkami danych (data frames)
+
+Zadanie 1.
+
+**Utwórz ramkę danych zawierającą informacje o produktach: nazwa (tekst), cena (liczba), ilość (liczba całkowita).**
+
+```{r}
+produkty <- data.frame(
+  nazwa = c("komputer", "klawiatura", "dlugopis"),
+  cena = c(999.99,69.99,12.99),
+  liczba = c(18,18,24)
+)
+```
+
+Zadanie 3.
+
+```{r}
+produkty$wartosc <- c(produkty$cena*produkty$liczba)
+print (produkty$wartosc)
+```
+
+```{r}
+a = 7
+b = 5
+c = 10
+if ((a > b) & (a < c)) {
+wynik <- paste(a," jest większe niż", b,"i mniejsze niż",c)
+} else {
+wynik <- paste(a,"nie jest większe niż", b,"lub mniejsze niż",c)
+}
+print(wynik)
+```
+
+```{r}
+liczby_lista=c(1:5)
+for (i in liczby_lista){
+  print (i)
+}
+```
+
+```{r}
+silnia=c()
+while (i<4){
+  
+}
+print (silnia)
+```
