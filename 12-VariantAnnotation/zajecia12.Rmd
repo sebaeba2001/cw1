@@ -1,0 +1,49 @@
+```{r}
+packages <- c("VariantAnnotation", "GenomicRanges", "AnnotationHub")
+BiocManager::install(packages)
+```
+
+```{r}
+library(VariantAnnotation)
+library(GenomicRanges)
+library(AnnotationHub)
+```
+
+```{r}
+#wczytanie ścieżki do pliku
+fl <- system.file("extdata", "chr22.vcf.gz", package="VariantAnnotation")
+#wczytanie pliku
+vcf <- readVcf(fl, "hg19")
+#podstawowe informacje o pliku
+vcf
+```
+
+#Filtracja i analiza jakości
+
+```{r}
+summary(qual(vcf))
+```
+
+```{r}
+#filtrowanie wariantów
+vcf_filtered <- vcf[!is.na(qual(vcf)) & qual(vcf) >99, ]
+vcf_filtered
+summary(qual(vcf_filtered))
+```
+
+Anotacja wariantów
+
+```{r}
+BiocManager::install("TxDb.Hsapiens.UCSC.hg19.knownGene")
+```
+
+```{r}
+library(TxDb.Hsapiens.UCSC.hg19.knownGene)
+txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene
+```
+
+```{r}
+gr <- rowRanges(vcf_filtered)
+loc_anno <- locateVariants(gr, TxDb, AllVariants())
+head(loc_anno)
+```
